@@ -1,0 +1,83 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}Home{% endblock %} &mdash; Everything changes&hellip;</title>
+    <link href="/static/bootstrap.css" rel="stylesheet">
+    <link href="/static/mine.css" rel="stylesheet">
+    <link href="/feed.atom" rel="alternate" title="Recent Blog Posts" type="application/atom+xml">
+    {% for link in links %}<link rel="{{ link.rel }}" href="{{ link.href }}"{% if link.media %} media="{{ link.media }}"{% endif %} type="{{ link.type }}">{% endfor %}
+</head>
+<body>
+<header>
+    <div class="row">
+        <div class="span10 offset2">
+            <h1><a href="/">Everything changes&hellip;</a></h1>
+        </div>
+        <div class="span5">
+            <div class="pull-right">
+                {# <a href="https://github.com/sa2ajj"><img src="/static/github.png"></a> #}
+                <a href="https://twitter.com/#!/sa2ajj"><img src="/static/twitter.png"></a>
+                <a href="http://fi.linkedin.com/in/sa2ajj"><img src="/static/facebook.png"></a>
+                <a href="http://fi.linkedin.com/in/sa2ajj"><img src="/static/linkedin.png"></a>
+                <a href="/feed.atom"><img src="/static/rss.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span15 offset2">
+            <div class="pull-right">
+                <a href="/about.html">About</a> |
+                <a href="/projects.html">Projects</a> |
+                <a href="/contact.html">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="row body">
+    <div class="span10 offset3">{% block body %}Body{% endblock %}</div>
+    <div class="span4 mysidebar">
+    {% block extra_nav %}{% endblock %}
+    <h2>Search</h2>
+    <form><input class="search" id="search-input" size="30" type="text" /></form>
+
+    <h2>Navigate</h2>
+    <ul class="unstyled">
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="/archive/">Archives</a></li>
+    </ul>
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1893645012988979";
+    google_ad_slot = "8982991764"; google_ad_width = 160; google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    </div>
+</div>
+<div class="h-ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1893645012988979";
+google_ad_slot = "4840456921"; google_ad_width = 468; google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+<footer>
+    <p>2010-2011 &copy; Mikhail Sobolev</p>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></p>
+</footer>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28041266-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+{#
+    vim:ft=htmldjango
+ #}
