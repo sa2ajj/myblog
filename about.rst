@@ -19,9 +19,10 @@ I currently work for `Nokia <http://nokia.com>`_.
 
 The area of my work is distributed build systems.  The most actively used
 system is BIFH -- Beloved Integration Friendly Helper -- a system written in
-Python that uses a number of technologies:
+Python that uses a number of tools:
 
-* AMQP
+* RabbitMQ
+* Django
 * MySQL
 * Scratchbox
 * Debian
