@@ -33,6 +33,6 @@ About This Site
 This site uses a `modified version <https://github.com/sa2ajj/rstblog>`_ of
 `rstblog <https://github.com/mitsuhiko/rstblog>`_.
 
-The style is based on Twitter's `bootstrap <http://twitter.github.com/bootstrap/>`_.
+The style uses Twitter's `bootstrap <http://twitter.github.com/bootstrap/>`_ stylesheet.
 
 The used icons are provided by `MySiteMyWay Icons <http://icons.mysitemyway.com/>`_.
