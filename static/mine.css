@@ -93,3 +93,13 @@ tt {
 pre {
     font-family: 'Ubuntu Mono', sans-serif;
 }
+
+.admonition-title {
+    font-weight: bold;
+    float: left;
+    padding-right: 1em;
+}
+
+.admonition-title:after {
+    content: ": ";
+}
