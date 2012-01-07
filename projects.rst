@@ -27,6 +27,11 @@ Semi-Active Projects
 Inactive Projects
 -----------------
 
+`mst </projects/mst/>`_
+    My Screenshot Tool
+
+    It was quite useful at the time, but its time is gone.
+
 `pam-realm </projects/pam-realm>`_
     control you realms
 
