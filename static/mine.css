@@ -62,12 +62,12 @@ img.me {
 
 div.tags {
     border-bottom: 1px dashed #999;
-    background-color: #f8f8f8;
+    background-color: #e0e0e0;
     margin-bottom: 1em;
 }
 
 div.date {
-    background-color: #f8f8f8;
+    background-color: #e0e0e0;
 }
 
 h1.title {
@@ -75,4 +75,9 @@ h1.title {
     border-bottom: 1px dashed #999;
     margin-bottom: 0;
     /* background-color: #f8f8f8; */
+}
+
+.detail h1 {
+    margin-bottom: 0;
+    border-bottom: 1px dashed #999;
 }
