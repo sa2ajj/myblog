@@ -45,6 +45,16 @@
     <p>{%- for tag in get_tags(limit=50) %}
     <a href="{{ link_to('tag', tag=tag.name) }}" style="font-size: {{ tag.size }}%">{{ tag.name }}</a>
     {%- endfor %}</p>
+
+    <h2>Archive</h2>
+    <ul class="unstyled">{%- for entry in get_archive() %}
+        <li>{%- if loop.first %}<a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a>
+        <ul>{%- for subentry in entry.months %}
+            <li><a href="{{ link_to('blog_archive', year=entry.year, month=subentry.month) }}">{{ subentry.month_name }}</a> ({{ subentry.count }})</li>
+        {%- endfor %}</ul>{%- else %}
+        <a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a> ({{ entry.count }})
+        {%- endif %}</li>
+    {%- endfor %}
     </ul>
 
     <div class="h-ads"><script type="text/javascript"><!--
