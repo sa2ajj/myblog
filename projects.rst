@@ -26,3 +26,9 @@ Semi-Active Projects
 
 Inactive Projects
 -----------------
+
+`pam-realm </projects/pam-realm>`_
+    control you realms
+
+    This project served its purpose back in 2002.   However lately there seem
+    to be little use in it.
