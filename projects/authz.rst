@@ -5,7 +5,7 @@ AuthZ Tools -- manipulate your authz files
 ==========================================
 
 This is a package that contains several tools to manipulate authz files (as
-used by ``mod_auth_svn`` module for `Subversion <http://subversion.tigris.org>`_.
+used by ``mod_auth_svn`` module for `Subversion <http://subversion.apache.org>`_.
 The main reason for this package to exist -- big authz files and authz files
 located on remote computers.
 
