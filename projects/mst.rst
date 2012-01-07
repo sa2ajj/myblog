@@ -30,7 +30,7 @@ it on this very computer!) and you are done.
 
 Thanks go to:
 
-* Mathew Allum for `didiwiki <http://didiwiki.org>`_ (the http code was borrowed from there)
+* Mathew Allum for `didiwiki <http://didiwiki.org>`_ -- the http code was borrowed from there (the link seem to be dead though)
 * Tommi Komulainen for the code that actually saves the png file (this was an internal tool he originally created)
 
 Last changed::
