@@ -58,10 +58,12 @@ Installation (Common Part)
 
 * copy the script to ``/usr/lib/cgi-bin``
 * modify two variables at the very beginning of the file:
+
     ``authz_file``
         authz file you'd like to maintain
     ``template_file``
         template that is part of this package
+
 * make sure the script is exectuable: ``chmod +x /usr/lib/cgi-bin/authz-admin``
 * make sure that the authz file is writable for the user under which web
   server is running (in case of Debian)::
