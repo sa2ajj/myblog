@@ -81,3 +81,15 @@ h1.title {
     margin-bottom: 0;
     border-bottom: 1px dashed #999;
 }
+
+.body h2 a {
+    text-color: inherit;
+}
+
+tt {
+    font-family: 'Ubuntu Mono', sans-serif;
+}
+
+pre {
+    font-family: 'Ubuntu Mono', sans-serif;
+}
