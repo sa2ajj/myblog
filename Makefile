@@ -11,6 +11,7 @@ serve: build
 fserve: clean serve
 
 publish: build
+	git push
 	rsync -avz --delete _build/ prod.repoz.net:/var/www/sa2ajj/
 
 fpublish: fbuild publish
