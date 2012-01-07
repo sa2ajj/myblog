@@ -27,6 +27,9 @@ Semi-Active Projects
 Inactive Projects
 -----------------
 
+`authz-tools </projects/authz/>`_
+    manipulate your authz files
+
 `mst </projects/mst/>`_
     My Screenshot Tool
 

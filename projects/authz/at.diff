@@ -1,0 +1,158 @@
+diff -ubrN -x .svn authz-tools-0.5/authz-admin authz-tools/authz-admin
+--- authz-tools-0.5/authz-admin	2005-04-05 02:26:51.472960000 +0300
++++ authz-tools/authz-admin	2005-06-21 19:44:11.000000000 +0300
+@@ -115,6 +115,7 @@
+     acls.append(format_header(item))
+     acls.append('\n')
+     acls.append(af[item])
++    acls.append('\n')
+ 
+   params = {
+     'authz_file' : authz_file,
+diff -ubrN -x .svn authz-tools-0.5/AuthZFile.py authz-tools/AuthZFile.py
+--- authz-tools-0.5/AuthZFile.py	2005-04-05 01:13:45.058719000 +0300
++++ authz-tools/AuthZFile.py	2005-06-21 19:33:18.000000000 +0300
+@@ -140,7 +140,17 @@
+     if repo == '':
+       repo = None
+ 
+-    return filter(lambda x, r = repo : x[0] == r, self.keys())
++    items = filter(lambda x, r = repo : x[0] == r, self.keys())
++
++    def repopath(x):
++      if ':' in x:
++        return tuple(x.split(':', 1))
++      else:
++        return None, x
++
++    items.sort(lambda x, y, p = repopath : cmp(p(x), p(y)))
++
++    return items
+ 
+   def member(self, user, group):
+     if self.__group_members is None:
+diff -ubrN -x .svn authz-tools-0.5/htc.py authz-tools/htc.py
+--- authz-tools-0.5/htc.py	1970-01-01 02:00:00.000000000 +0200
++++ authz-tools/htc.py	2005-06-21 19:06:59.000000000 +0300
+@@ -0,0 +1,22 @@
++#! /usr/bin/python
++
++import sys
++from random import randint
++from crypt import crypt
++from getpass import getpass
++import string
++
++from HTPFile import HTPasswdFile
++
++file = 'some.passwd'
++
++hpf = HTPasswdFile(file)
++hpf.read()
++
++sys.stdout.write('Enter UID: ')
++user = sys.stdin.readline()
++pwd = getpass('Enter password: ')
++
++user = user.strip()
++
++print 'checking:', hpf.check(user, pwd)
+diff -ubrN -x .svn authz-tools-0.5/HTPFile.py authz-tools/HTPFile.py
+--- authz-tools-0.5/HTPFile.py	1970-01-01 02:00:00.000000000 +0200
++++ authz-tools/HTPFile.py	2005-06-21 19:06:59.000000000 +0300
+@@ -0,0 +1,81 @@
++#
++
++import os
++from random import randint
++from crypt import crypt
++import string
++
++symbols = './' + string.lowercase + string.uppercase + string.digits
++
++class HTPasswdFile:
++  def __init__ (self, fname):
++    self.__fname = fname
++    self.__index = {}
++    self.__users = []
++
++  def read(self):
++    f = open(self.__fname, 'r')
++
++    self.__index = {}
++    self.__users = []
++
++    for line in f.readlines():
++      line = line.strip()
++
++      parts = line.split(':')
++
++      self.__index[parts[0]] = len(self.__users)
++      self.__users.append(parts)
++
++    f.close()
++
++  def write(self):
++    outname = self.__fname + '.new'
++
++    f = open(outname, 'w')
++
++    for record in self.__users:
++      print >> f, ':'.join(record)
++
++    f.close()
++
++    os.unlink(self.__fname)
++    os.rename(outname, self.__fname)
++
++  def users(self):
++    return self.__index.keys()
++
++  def add(self, user, password):
++    if user not in self.__index:
++      self.__index[user] = len(self.__users)
++      self.users.append ([user, ''])
++
++      self.set(user, password)
++
++  def check(self, user, password):
++    if user in self.__index:
++      crypted = self.__users[self.__index[user]][1]
++
++      result = crypt(password, crypted) == crypted
++    else:
++      result = False
++
++    return result
++
++  def set(self, user, password):
++    if user in self.__index:
++      salt = randint(0,4095)
++
++      s1, s2 = salt / 64, salt % 64
++
++      crypted = crypt(p1, symbols[s1]+symbols[s2])
++
++      self.__users[self.__index[user]][1] = crypted
++    else:
++      pass  # simply ignore!
++
++  def disable(self, user):
++    pass
++
++  def enable(self, user):
++    pass
+diff -ubrN -x .svn authz-tools-0.5/README authz-tools/README
+--- authz-tools-0.5/README	2005-04-05 02:26:51.472960000 +0300
++++ authz-tools/README	2005-06-21 19:06:59.000000000 +0300
+@@ -1,6 +1,10 @@
+ This package is about managing authz files as understood by mod_authz_svn --
+ authorization module for subversion[1] repositories served via apache.
+ 
++You can always find the latest version of the package at
++
++  http://only.mawhrin.net/~mss/thingies/authz/
++
+ Currently the package contains two utilities:
+ 
+   authz-tool  -- a tool for extracting and modifying information in a authz

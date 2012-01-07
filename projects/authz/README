@@ -1,0 +1,148 @@
+This package is about managing authz files as understood by mod_authz_svn --
+authorization module for subversion[1] repositories served via apache.
+
+Currently the package contains two utilities:
+
+  authz-tool  -- a tool for extracting and modifying information in a authz
+                 file from command line
+  authz-admin -- a cgi script to help maintaining authz files.  it should be
+                 useful for the situations where you have numerous repositories
+                 served with help of SVNParentPath directive (see mod_dav_svn
+                 module documentation)
+
+INSTALLATION
+
+So far the package was only tried on a Debian system with python2.4 (no, the
+application does not use any 2.4 specific stuff).  The installation looks as
+simple as that:
+
+  python setup.py install
+
+You must make sure that you have python2.4-dev package installed beforehand.
+
+After the command finishes, you will find the following files installed:
+
+  /usr/lib/python2.4/site-package/AuthZFile.py
+  /usr/bin/authz-tool
+  /usr/bin/authz-admin
+  /usr/share/authz-tools/authz-admin.tmpl
+
+USAGE
+
+  authz-tool
+
+    Its usage is pretty simple:
+
+      authz-tool <authzfile> <operation> [<arg>]
+
+    Where operation is one of the following:
+
+    getgroups
+      dumps the content of [groups] section to the standard output
+
+    setgroups
+      replaces the contents of the [groups] section with what is given on the
+      standard input. if the input does not have a [groups] section, the
+      [groups] section in the specified file will be removed
+
+    get <repo>
+      dump all sections that are related to the specified repository
+
+    set <repo>
+      replaces all sections for the specified repository with what is given on
+      the standard input. the input is going to be checked and only appropriate
+      sections will be put in the file
+
+    del <repo>
+      removes all sections related to the specified repository
+
+    NOTE: for the operations with repositories, you may specify '' (empty
+    string) as a repository name
+
+  authz-admin
+
+    authz-admin is a CGI script that allows modification of an authz file
+
+    It can be used in two essentially different ways:
+      -- there are no restrictions accessing the script
+      -- user must be authenticated to access the script
+
+    Installation (Common Part)
+
+      copy the script to /usr/lib/cgi-bin
+      modify three variables at the very beginning of the file:
+        authz_file -- authz file you'd like to maintain
+        template_file -- template that is part of this package
+        script_alias -- relative URL through which the script is accessible
+                        on your web server (if you copy the script to
+                        /usr/lib/cgi-bin, you do not have to change it)
+      make sure the script is exectuable: chmod +x /usr/lib/cgi-bin/authz-admin
+      make sure that the authz file is writable for the user under which web
+      server is running:
+        in case of Debian:
+          chown www-data:www-data /path/to/authz/file
+          chmod u+w /path/to/authz/file
+
+      if necessary limit access to the script (instructions will be provided
+        later)
+
+      point your browser to http://your-host.example.org/cgi-bin/authz-admin
+
+    Restricted Access
+
+      When run script checks if the user had to authenticate herself.  If yes,
+      then the script will perform additional checks to see if the user can
+      perform certain operations. The rights are granted by adding user to the
+      special groups (these must be defined in [groups] section):
+
+        authz-admin-<super>
+          only users from this group can modify [groups] section
+
+        authz-admin-<global>
+          users from this group can modify all non qualified paths (sections
+          that are named like [/path])
+
+        authz-admin-repo
+          users from this group can modify paths for the specific repo
+          (sections that are named like [repo:/path])
+
+      So to restrict certain operations to specific users you'd have to do the
+      following (for apache):
+
+        add to the configuration file a section like
+
+          <Location /cgi-bin/authz-admin>
+            AuthType  Basic
+            AuthName  "Editing Authz File"
+            AuthFileName  /path/to/htpasswd/file
+            Require valid-user
+          </Location>
+
+        add to [groups] section of your authz file at least the following line
+
+          authz-admin-<super> = yourusername
+
+        restart apache and here you are
+
+AUTHOR
+
+  Mikhail Sobolev, <mss@mawhrin.net>
+
+COPYRIGHT
+
+  Copyright (c) 2005, Mikhail Sobolev
+
+  You may use, modify and redistribute this program according to the terms and
+  conditions of GPL v2 (see the file COPYING)
+
+CREDITS
+
+  Thanks darix[2] at #svn[3] for the idea:
+
+    <darix> start coding
+
+REFERENCES
+
+  1. http://subversion.tigris.org
+  2. http://monsters.rsn.uni-rostock.de./~darix/
+  3. irc://irc.freenode.net/svn
