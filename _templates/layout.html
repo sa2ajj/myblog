@@ -41,10 +41,10 @@
     <h2>Search</h2>
     <form><input class="search" id="search-input" size="30" type="text" /></form>
 
-    <h2>Navigate</h2>
-    <ul class="unstyled">
-        <li><a href="/tags">Tags</a></li>
-        <li><a href="/archive/">Archives</a></li>
+    <h2>Tag Cloud</h2>
+    <p>{%- for tag in get_tags(limit=50) %}
+    <a href="{{ link_to('tag', tag=tag.name) }}" style="font-size: {{ tag.size }}%">{{ tag.name }}</a>
+    {%- endfor %}</p>
     </ul>
     <script type="text/javascript"><!--
     google_ad_client = "ca-pub-1893645012988979";
