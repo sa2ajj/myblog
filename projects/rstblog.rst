@@ -11,7 +11,8 @@ There was a number of changes that I do not think useful enough to be merged
 upstream.  However if I feel that some of the changes are worth spreading, pull
 requests will be due...
 
-The things to be done:
+TODO
+----
 
 * make the search working (yes, there's a search field to the right, but it
   does not really work)
