@@ -30,7 +30,7 @@ Python that uses a number of tools:
 About This Site
 ===============
 
-This site uses a `modified version <https://github.com/sa2ajj/rstblog>`_ of
+This site uses a `modified version </projects/rstblog.html>`_ of
 `rstblog <https://github.com/mitsuhiko/rstblog>`_.
 
 The style uses Twitter's `bootstrap <http://twitter.github.com/bootstrap/>`_ stylesheet.

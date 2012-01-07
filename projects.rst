@@ -12,6 +12,9 @@ Active Projects
 `edeblib <projects/edeblib.html>`_
     an Erlang library to work with Debian files
 
+`rstblog <projects/rstblog.html>`_
+    a static site generator with blogging support
+
 Semi-Active Projects
 --------------------
 
