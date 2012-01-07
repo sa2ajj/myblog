@@ -35,4 +35,6 @@ This site uses a `modified version </projects/rstblog.html>`_ of
 
 The style uses Twitter's `bootstrap <http://twitter.github.com/bootstrap/>`_ stylesheet.
 
+The fonts are `Ubuntu Fonts <http://font.ubuntu.com/>`_.
+
 The used icons are provided by `MySiteMyWay Icons <http://icons.mysitemyway.com/>`_.
