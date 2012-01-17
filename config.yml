@@ -1,7 +1,14 @@
 ---
-active_modules: [pygments, tags, blog]
+active_modules: [pygments, tags, blog, twitter]
 author: Mikhail Sobolev
 canonical_url: http://sa2ajj.mawhrin.net
 modules:
     pygments:
         style: tango
+    twitter:
+        consumer:
+            key: DVjT7yz8A9UjaNgMrAhfbA
+            secret: 5ns93VwpYxUxpodemsEn9zIBUg4Aq3FgfX7ICzCqU
+        access:
+            key: <get your own key>
+            secret: <get your own secret>
