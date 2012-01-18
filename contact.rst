@@ -16,4 +16,7 @@ places:
 `LinkedIn <http://fi.linkedin.com/in/sa2ajj>`_
     Professional networking
 
+`Hello Kitty <http://www.sanrio.com/>`_
+    No, you cannot contact me there: I just really like it!
+
 Should you like to just drop a line, use mss@mawhrin.net as your destination...
