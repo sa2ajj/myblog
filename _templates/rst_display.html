@@ -7,10 +7,10 @@
   {%- if ctx.pub_date %}
   <div class="date">Published: {{ format_date(ctx.pub_date) }}</div>
   {%- endif %}
-  <div class="tags">Tags: {% for tag in ctx.tags|sort(case_sensitive=true) %}
+  {% if ctx.tags %}<div class="tags">Tags: {% for tag in ctx.tags|sort(case_sensitive=true) %}
       {%- if not loop.first %}, {% endif -%}
       <a href="{{ link_to('tag', tag=tag) }}">{{ tag }}</a>
-    {%- endfor %}</div>
+    {%- endfor %}</div>{% endif %}
   {{ rst.fragment }}
 {% endblock %}
 {% block extra_nav %}{%- if rst.sections %}
