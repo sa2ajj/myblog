@@ -1,9 +1,10 @@
-public: no
+public: yes
 tags:
     - personal
     - rant
 summary: |
     A ranting summary of my work @ Nokia
+share: twitter
 
 Eight years long ride
 =====================
