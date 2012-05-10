@@ -88,7 +88,7 @@ very much for their devotion, resilience, knowledge, energy and support.
 
 **Test Automation**
 
-* Mikko Mäkinen
+* Mikko Mäkkinen
 * Ville Ilvonen
 * Lauri Kantonen
 * Alexander Kotelnikov
