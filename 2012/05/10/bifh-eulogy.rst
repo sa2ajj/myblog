@@ -11,6 +11,11 @@ share:
 BIFH: Eulogy
 ============
 
+(**Update**: for those who think it's premature, according to `Wikipedia
+<http://en.wikipedia.org/wiki/Eulogy>`_: *On occasions, eulogies are given to
+those who are severely ill or elderly in order to express words of love and
+gratitude before they pass away.*)
+
 While working on many devices (`770`_, `N800`_, `N810`_, `N900`_ and `N9`_) and
 software updates for them our R&D activities heavily relied on the build system
 created by the team I led and, later, by the team I worked in.
