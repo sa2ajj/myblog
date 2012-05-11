@@ -1,5 +1,6 @@
 public: yes
 destination_filename: projects.html
+template: page.html
 
 Projects
 ========

@@ -1,5 +1,6 @@
 public: yes
 destination_filename: 404.html
+template: page.html
 
 Not Found
 =========

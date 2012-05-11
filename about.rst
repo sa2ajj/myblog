@@ -1,5 +1,6 @@
 public: yes
 destination_filename: about.html
+template: page.html
 
 =====
 About

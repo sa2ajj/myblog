@@ -1,5 +1,6 @@
 public: yes
 destination_filename: contact.html
+template: page.html
 
 Contact Me
 ==========
