@@ -18,8 +18,9 @@ My name is Mikhail Sobolev (Михаил Соболев).  I was born in Russia
 I currently work for `Nokia <http://nokia.com>`_.
 
 The area of my work is distributed build systems.  The most actively used
-system is BIFH -- Beloved Integration Friendly Helper -- a system written in
-Python that uses a number of tools:
+system is BIFH -- `Beloved Integration Friendly Helper
+<http://sa2ajj.mawhrin.net/tags/bifh/>`_ -- a system written in Python that
+uses a number of tools:
 
 * `RabbitMQ <http://www.rabbitmq.com/>`_
 * `Django <https://www.djangoproject.com/>`_
