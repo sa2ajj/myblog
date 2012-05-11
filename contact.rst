@@ -10,7 +10,7 @@ places:
 `Twitter <https://twitter.com/#!/sa2ajj>`_
     Things that catch my attention, thoughts of the moment
 
-`Facebook <http://fi.linkedin.com/in/sa2ajj>`_
+`Facebook <http://www.facebook.com/sa2ajj>`_
     A bit more thorough happenings in my life
 
 `LinkedIn <http://fi.linkedin.com/in/sa2ajj>`_
