@@ -21,11 +21,11 @@ The area of my work is distributed build systems.  The most actively used
 system is BIFH -- Beloved Integration Friendly Helper -- a system written in
 Python that uses a number of tools:
 
-* RabbitMQ
-* Django
-* MySQL
-* Scratchbox
-* Debian
+* `RabbitMQ <http://www.rabbitmq.com/>`_
+* `Django <https://www.djangoproject.com/>`_
+* `MySQL <http://mysql.com/>`_
+* `Scratchbox <http://scratchbox.org/>`_
+* `Debian <http://www.debian.org/>`_
 
 About This Site
 ===============
