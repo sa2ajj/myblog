@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}{{ rst.title }}{% endblock %}
+{% block body %}
+  {%- if not config.hide_title %}
+  {{ rst.html_title }}
+  {%- endif %}
+  {%- if ctx.pub_date %}
+  <div class="date">Published: {{ format_date(ctx.pub_date) }}</div>
+  {%- endif %}
+  {{ rst.fragment }}
+{% endblock %}
+{% block extra_nav %}{%- if rst.sections %}
+<h2>On This Page</h2>
+<ul class="unstyled">
+    {%- for section in rst.sections %}
+    <li><a href="#{{ section[0]}}">{{ section[1] }}</a></li>
+    {% endfor -%}
+</ul>
+{% endif -%}{% endblock %}
