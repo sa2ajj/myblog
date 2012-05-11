@@ -1,4 +1,5 @@
 public: yes
+template: page.html
 
 ==========================================
 AuthZ Tools -- manipulate your authz files

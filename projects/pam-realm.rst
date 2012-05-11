@@ -1,4 +1,5 @@
 public: yes
+template: page.html
 
 pam-realm -- control your realms
 ================================

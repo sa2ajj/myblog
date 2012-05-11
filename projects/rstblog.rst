@@ -1,5 +1,6 @@
 public: yes
 destination_filename: projects/rstblog.html
+template: page.html
 
 rstblog -- a static site generator with blogging support
 ========================================================

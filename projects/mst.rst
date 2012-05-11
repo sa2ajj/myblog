@@ -1,4 +1,5 @@
 public: yes
+template: page.html
 
 My Screenshot Tool
 ==================
