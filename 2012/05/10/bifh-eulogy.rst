@@ -120,7 +120,7 @@ And I'd like to thank many other people:
 * Reto Zingg
 * Oleg Romashin
 * Leonid Zolotarev
-* Juha Kallionen
+* Juha Kallioinen
 * Jussi Hakala
 * Riku Voipio
 * Johan Ericsson
