@@ -68,7 +68,7 @@ very much for their devotion, resilience, knowledge, energy and support.
 * Steve Jayna
 * Michał Gałka
 * Dawid Romaldowski
-* Ramez Hanna (http://www.informatiq.org)
+* `Ramez Hanna <http://www.informatiq.org>`_
 
 **Integration Support**
 
