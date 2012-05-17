@@ -96,6 +96,7 @@ very much for their devotion, resilience, knowledge, energy and support.
 * Mikko Mäkinen
 * Ville Ilvonen
 * Lauri Kantonen
+* Teemu Vaino
 * Alexander Kotelnikov
 
 **BIFH Developers**
