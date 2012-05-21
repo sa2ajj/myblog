@@ -113,7 +113,6 @@ very much for their devotion, resilience, knowledge, energy and support.
 
 And I'd like to thank many other people:
 
-* Kimmo Hämäläinen
 * Yauheni Kaliuta
 * Alexander Shishkin
 * Natalia Dobrovolskaya
@@ -125,8 +124,6 @@ And I'd like to thank many other people:
 * Jussi Hakala
 * Riku Voipio
 * Johan Ericsson
-* Mikko Leppänen
-* Grigori Timonen
 * Francesco Vozza
 * ...
 * *And many, many other*
