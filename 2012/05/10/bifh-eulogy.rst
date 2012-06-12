@@ -125,6 +125,7 @@ And I'd like to thank many other people:
 * Jussi Hakala
 * Riku Voipio
 * Johan Ericsson
+* Mikko Leppänen
 * Francesco Vozza
 * ...
 * *And many, many other*
