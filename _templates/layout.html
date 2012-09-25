@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{% block title %}Home{% endblock %} &mdash; Everything changes&hellip;</title>
-    <link href="/static/bootstrap.css" rel="stylesheet">
-    <link href="/static/mine.css" rel="stylesheet">
-    <link href="/feed.atom" rel="alternate" title="Recent Blog Posts" type="application/atom+xml">
-    {% for link in links %}<link rel="{{ link.rel }}" href="{{ link.href }}"{% if link.media %} media="{{ link.media }}"{% endif %} type="{{ link.type }}">{% endfor %}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="author" content="Mikhail Sobolev">
+  <title>{% block title %}Home{% endblock %} &mdash; Everything changes&hellip;</title>
+  <link href="/static/bootstrap.css" rel="stylesheet">
+  <script type="text/javascript" src="//use.typekit.net/puq8fye.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link href="/static/mine.css" rel="stylesheet">
+  <link href="/feed.atom" rel="alternate" title="Recent Blog Posts" type="application/atom+xml">
+  {% for link in links %}<link rel="{{ link.rel }}" href="{{ link.href }}"{% if link.media %} media="{{ link.media }}"{% endif %} type="{{ link.type }}">{% endfor %}
 </head>
+
 <body>
-<header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">Everything changes &hellip;</a>
+        <ul class="nav">
+          <li><a href="/">Blog</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact Me</a></li>
+        </ul>
+        <p class="navbar-text pull-right">
+          <a href="https://twitter.com/#!/sa2ajj"><img title="Twitter" src="static/twitter.png"></a>
+          <a href="http://www.facebook.com/sa2ajj"><img title="Facebook" src="static/facebook.png"></a>
+          <a href="http://fi.linkedin.com/in/sa2ajj"><img title="LinkedIn" src="static/linkedin.png"></a>
+          <a href="http://www.sanrio.com/"><img title="Hello, Kitty" src="static/cat.png"></a>
+          <a href="/feed.atom"><img title="Feed" src="static/rss.png"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="row">
-        <div class="span10 offset2">
-            <h1><a href="/">Everything changes&hellip;</a></h1>
+      <div class="span8">{% block body %}Body{% endblock %}</div>
+      <div class="span3 mysidebar pull-right">
+        {% block extra_nav %}{% endblock %}
+        {# <h2>Search</h2>
+        <form><input class="search" id="search-input" size="30" type="text" /></form> #}
+
+        <h2>Tag Cloud</h2>
+        <p>{%- for tag in get_tags(limit=50) %}
+        <a href="{{ link_to('tag', tag=tag.name) }}" style="font-size: {{ tag.size }}%">{{ tag.name }}</a>
+        {%- endfor %}</p>
+
+        <h2>Archive</h2>
+        <ul class="unstyled">{%- for entry in get_archive() %}
+          <li>{%- if loop.first %}<a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a>
+          <ul>{%- for subentry in entry.months %}
+              <li><a href="{{ link_to('blog_archive', year=entry.year, month=subentry.month) }}">{{ subentry.month_name }}</a> ({{ subentry.count }})</li>
+          {%- endfor %}</ul>{%- else %}
+          <a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a> ({{ entry.count }})
+          {%- endif %}</li>
+        {%- endfor %}</ul>
+
+        <div class="h-ads">
+          <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-1893645012988979"; google_ad_slot = "8982991764"; google_ad_width = 160; google_ad_height = 600;
+            //--></script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
         </div>
-        <div class="span5">
-            <div class="pull-right">
-                {# <a href="https://github.com/sa2ajj"><img src="/static/github.png"></a> #}
-                <a href="https://twitter.com/#!/sa2ajj"><img src="/static/twitter.png"></a>
-                <a href="http://www.facebook.com/sa2ajj"><img src="/static/facebook.png"></a>
-                <a href="http://fi.linkedin.com/in/sa2ajj"><img src="/static/linkedin.png"></a>
-                <a href="http://www.sanrio.com/"><img src="/static/cat.png"></a>
-                <a href="/feed.atom"><img src="/static/rss.png"></a>
-            </div>
-        </div>
+      </div>
     </div>
+
     <div class="row">
-        <div class="span15 offset2">
-            <div class="pull-right">
-                <a href="/">Home</a> |
-                <a href="/about.html">About</a> |
-                <a href="/projects.html">Projects</a> |
-                <a href="/contact.html">Contact Me</a>
-            </div>
+      <div class="span12">
+        <div class="h-ads">
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-1893645012988979";
+          google_ad_slot = "4840456921"; google_ad_width = 468; google_ad_height = 15;
+          //-->
+          </script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
         </div>
+      </div>
     </div>
-</header>
+  </div>
 
-<div class="row body">
-    <div class="span10 offset3">{% block body %}Body{% endblock %}</div>
-    <div class="span4 mysidebar">
-    {% block extra_nav %}{% endblock %}
-    <h2>Search</h2>
-    <form><input class="search" id="search-input" size="30" type="text" /></form>
+  <footer>
+    <p>Copyright &copy; 2010-2012 Mikhail Sobolev</p>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img title="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></p>
+  </footer>
 
-    <h2>Tag Cloud</h2>
-    <p>{%- for tag in get_tags(limit=50) %}
-    <a href="{{ link_to('tag', tag=tag.name) }}" style="font-size: {{ tag.size }}%">{{ tag.name }}</a>
-    {%- endfor %}</p>
-
-    <h2>Archive</h2>
-    <ul class="unstyled">{%- for entry in get_archive() %}
-        <li>{%- if loop.first %}<a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a>
-        <ul>{%- for subentry in entry.months %}
-            <li><a href="{{ link_to('blog_archive', year=entry.year, month=subentry.month) }}">{{ subentry.month_name }}</a> ({{ subentry.count }})</li>
-        {%- endfor %}</ul>{%- else %}
-        <a href="{{ link_to('blog_archive', year=entry.year) }}">{{ entry.year }}</a> ({{ entry.count }})
-        {%- endif %}</li>
-    {%- endfor %}
-    </ul>
-
-    <div class="h-ads"><script type="text/javascript"><!--
-    google_ad_client = "ca-pub-1893645012988979";
-    google_ad_slot = "8982991764"; google_ad_width = 160; google_ad_height = 600;
-    //-->
-    </script>
-    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div>
-    </div>
-</div>
-<div class="h-ads">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-1893645012988979";
-google_ad_slot = "4840456921"; google_ad_width = 468; google_ad_height = 15;
-//-->
-</script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-</div>
-<footer>
-    <p>2010-2012 &copy; Mikhail Sobolev</p>
-    <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></p>
-</footer>
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-28041266-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-{% block scripts %}{% endblock %}
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28041266-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  {% block scripts %}{% endblock %}
 </body>
 </html>
 {#
-    vim:ft=htmldjango
+    vim:ft=htmldjango:sw=2:ts=2
  #}

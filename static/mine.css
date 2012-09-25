@@ -1,8 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,cyrillic);
 
 body {
+    padding-top: 60px;
+    padding-bottom: 40px;
     background-color: #efefef;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 hr {
@@ -35,7 +37,8 @@ h1 a:hover {
 }
 
 .mysidebar {
-    padding-left: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
     background-color: #e8e8e8;
 }
 
@@ -91,6 +94,10 @@ tt {
 }
 
 pre {
+    font-family: 'Ubuntu Mono', sans-serif;
+}
+
+code {
     font-family: 'Ubuntu Mono', sans-serif;
 }
 
