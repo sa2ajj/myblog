@@ -16,9 +16,7 @@ About Me
 My name is Mikhail Sobolev (Михаил Соболев).  I was born in Russia
 (St.Petersburg) and now live in Finland (Espoo).
 
-I currently work for `Nokia <http://nokia.com>`_.
-
-The area of my work is distributed build systems.  The most actively used
+The area of my work is distributed build systems.  The most actively loved
 system is BIFH -- `Beloved Integration Friendly Helper
 </tags/bifh/>`_ -- a system written in Python that
 uses a number of tools:
