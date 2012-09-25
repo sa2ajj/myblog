@@ -20,5 +20,6 @@ TODO
 * automatic posting to `twitter <http://twitter.com>`_ of new articles with
   proper tags
 * add `disqus <http://disqus.com/>`_ support, so you could comment on articles
-  that you find interesting
+  that you find interesting (**done**)
 * automatic posting to `Livejournal <http://livejournal.com>`_ of new articles
+  (maybe not, as I do not use livejournal that actively any more)
