@@ -23,5 +23,5 @@ This blog's "design" was updated to the latest version of `Twitter's Bootstrap
 simplifications of the layout took place.
 
 `Adobe <http://adobe.com>`_ added two fonts -- ``Source Sans Pro`` and ``Source
-Code Pro`` -- that I'm happily using on this site via `TypeKit
+Code Pro`` -- which I'm happily using on this site via `TypeKit
 <https://typekit.com/>`_.  (I hope that all necessary places were updated :))
