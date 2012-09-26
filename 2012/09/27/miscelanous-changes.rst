@@ -1,5 +1,5 @@
 public: yes
-tags: personal
+tags: [personal]
 summary: |
     Things change, and my life does with them...
 
