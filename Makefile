@@ -1,7 +1,7 @@
 all: build
 
 build:
-	rstblog-build
+	~/.local/bin/rstblog-build
 
 fbuild: touch build
 
@@ -12,7 +12,7 @@ fserve: fbuild serve
 
 publish: build
 	git push
-	rsync -avz --delete _build/ prod.repoz.net:/var/www/sa2ajj/
+	rsync -avz --delete _build/ replacement.mawhrin.net:blog/
 
 fpublish: fbuild publish
 
