@@ -13,13 +13,14 @@ About Me
     :alt: My recent picture
     :class: me
 
-My name is Mikhail Sobolev (Михаил Соболев).  I was born in Russia
-(St.Petersburg) and now live in Finland (Espoo).
+Summary
+-------
 
-The area of my work is distributed build systems.  The most loved
-system is BIFH -- `Beloved Integration Friendly Helper
-</tags/bifh/>`_ -- a system written in Python that
-uses a number of tools:
+My name is Mikhail Sobolev (Михаил Соболев).
+I was born in Russia (St.Petersburg) and now live in Finland (Espoo).
+
+The area of my work is distributed build systems.
+The most loved system is BIFH -- `Beloved Integration Friendly Helper </tags/bifh/>`_ -- a system written in Python that uses a number of tools:
 
 * `RabbitMQ <http://www.rabbitmq.com/>`_
 * `Django <https://www.djangoproject.com/>`_
