@@ -1,5 +1,5 @@
 ---
-active_modules: [pygments, tags, blog, twitter]
+active_modules: [pygments, tags, blog]
 author: Mikhail Sobolev
 canonical_url: http://sa2ajj.mawhrin.net
 modules:
